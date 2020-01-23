@@ -16,7 +16,11 @@ This file should be located at:
 
 ### 3. Install Docker
 
-	sudo apt-get install docker
+	sudo apt-get install docker.io
+
+#### 3(a). If necessary, add your user to the Docker group (you'll need to reconnect):
+
+	sudo usermod -aG docker [USERNAME]
 
 ### 4. Clone repository
 
