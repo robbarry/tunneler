@@ -24,7 +24,7 @@ You'll need to specify the IP address of the machine you want to connect to.
 
 ### 4. The build process will output an SSH key, which you'll need to share with the server administrator
 
-For example, see the SSH key below:
+Here's some sample output:
 
 <pre>
 Step 9/10 : CMD ["./entrypoint"]
@@ -38,6 +38,8 @@ Removing intermediate container dc1e6101d410
  ---> cd074353ff52
 Successfully built cd074353ff52
 </pre>
+
+In this case, you'd need to share the SSH key in bold with your administrator.
 
 ### 5. Create the container
 
