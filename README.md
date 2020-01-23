@@ -8,7 +8,7 @@ Use this tool to connect to MongoDB on DATA1 (eventually, could be repurposed fo
 
 	sudo apt-get install docker.io
 
-#### 2(a). If necessary, add your user to the Docker group (you'll need to reconnect):
+If necessary, add your user to the Docker group (you'll need to reconnect):
 
 	sudo usermod -aG docker [USERNAME]
 
