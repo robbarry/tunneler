@@ -1,7 +1,13 @@
 #!/bin/bash
 
-docker build -t ssher --build-arg docker_root_path="ssher" \
-					  --build-arg host_ip="$1" \
-				      -f ssher/Dockerfile .
-
+if [ $# -ne 1 ]; then
+	echo ""
+	echo "Syntax:"
+	echo "	./build IP_ADDRESS"
+	echo ""
+else
+	docker build -t ssher --build-arg docker_root_path="ssher" \
+						  --build-arg host_ip="$1" \
+					      -f ssher/Dockerfile .
+fi
 
