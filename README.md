@@ -4,13 +4,9 @@ Use this tool to connect to MongoDB on DATA1 (eventually, could be repurposed fo
 
 ## Installation instructions
 
-### 1. Send Rob a copy of your public key
+### 1. Tell Rob that you need to access Mongo
 
-This file should be located at:
-
-	~/.ssh/id_rsa.pub
-
-### 2. Add your username to your `bash` profile:
+### 2. Add your DJ username to your `bash` profile:
 
 	echo "export DJ_USERNAME=[YOUR_USERNAME]" >> ~/.profile && source ~/.profile
 
