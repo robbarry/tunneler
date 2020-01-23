@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ $# -ne 4 ]; then
+	echo "Usage: "
+	echo "  ./run instance_name username local_port_to_bind remote_port_to_bind"
+	echo "  example: ./run mongodb jsmith 27017 27017"
+	exit
+else
+	cmd="docker container run --publish $3:$4 --env local_port=$3 --env remote_port=$4 --env username=$2 --detach --name $1 ssher"      
+	$cmd
+	status=$?
+	if [ $status -eq 0 ]; then
+		echo ""
+		echo "Docker $1 instance started"
+		echo ""
+		echo "To view running instances:"
+		echo "  docker ps"
+		echo ""
+		echo "To stop instance:"
+		echo "  docker container stop $1"
+		echo ""
+		echo "To start instance:"
+		echo "  docker container start $1"
+		echo ""
+		echo "To delete instance:"
+		echo "  docker rm $1 --force"
+	fi
+fi
+

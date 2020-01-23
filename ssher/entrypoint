@@ -1,3 +1,7 @@
 #!/bin/bash
 
-autossh -M 0 -4 -T -N -g -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L $LOCAL_PORT:localhost:$REMOTE_PORT $HOST_USER@$HOST_IP
+autossh -M 0 -4 -T -N -g -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L $local_port:localhost:$remote_port $username@$host_ip		
+
+
+
+
