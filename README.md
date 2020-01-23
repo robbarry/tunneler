@@ -12,17 +12,17 @@ If necessary, add your user to the Docker group (you'll need to reconnect):
 
 	sudo usermod -aG docker [USERNAME]
 
-### 3. Clone repository
+### 2. Clone repository
 
 	git clone git@github.com:robbarry/ssher.git
 
-### 4. Build container
+### 3. Build container
 
 You'll need to specify the IP address of the machine you want to connect to.
 
 	cd ssher && ./build [SERVER_IP_ADDRESS]
 
-### 5. The build process will output an SSH key, which you'll need to share with the server administrator.
+### 4. The build process will output an SSH key, which you'll need to share with the server administrator.
 
 For example, see the SSH key below:
 
@@ -37,7 +37,7 @@ For example, see the SSH key below:
 	 ---> cd074353ff52
 	Successfully built cd074353ff52
 
-### 6. Create the container
+### 5. Create the container
 
 	./create [CONTAINER_NAME] [YOUR_USERNAME] [LOCAL_PORT] [REMOTE_PORT]
 
@@ -47,14 +47,14 @@ For example, if you wanted to connect to MongoDB on port `27017` with the userna
 
 At which point `localhost:27017` would be bound to the remote machine's port `27017`.
 
-### 7. Starting and stopping the connection
+## Starting and stopping the connection
 
 Once you've created the container, you can easily stop and start it using the following commands:
 
 	docker container stop [CONTAINER_NAME]
 	docker container start [CONTAINER_NAME]
 
-### Other features
+## Other features
 
 To view your running containers, you can type:
 
