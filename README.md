@@ -14,7 +14,7 @@ If necessary, add your user to the Docker group (you'll need to reconnect):
 
 ### 2. Clone the repository
 
-	git clone git@github.com:robbarry/ssher.git
+	git clone git@github.dowjones.net:investigations/ssher.git
 
 ### 3. Build the container
 
