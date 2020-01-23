@@ -1,0 +1,8 @@
+docker build -t ssher --build-arg ssh_prv_key="$(cat ~/.ssh/id_rsa)" \
+				      --build-arg ssh_pub_key="$(cat ~/.ssh/id_rsa.pub)" \
+				      --build-arg host_ip="10.2.173.9" \
+				      --build-arg local_port="27017" \
+				      --build-arg remote_port="27017" \
+				      --build-arg docker_root_path="ssher" \
+				      --build-arg host_user="barryr" \
+				      -f ssher/Dockerfile .
