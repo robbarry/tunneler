@@ -32,7 +32,7 @@ For example, see the SSH key below:
 	 ---> 1ebf678f52c6
 	Step 10/10 : RUN output="$( echo SHARE THIS KEY WITH YOUR ADMIN: &&                cat /root/.ssh/id_rsa.pub)" && echo $output
 	 ---> Running in dc1e6101d410
-	SHARE THIS KEY WITH YOUR ADMIN: **ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5oHWTv4s5vHWaqm5Xx8ovyG+bgOB0JCyrXnXErNq9wjnWhB3jGirSQTMGHj53p3hDWR+gV1Zgf8BJfwp4ODsuPpMnuMNyuUMWlItyKxQco8P8zi8sjJ3TfW2DNYf0QGEdkvFIMryejIoFoooDC3uUI0ofMRuyC2VPT+wOLmSOf2mgDL838XYis4Z2BC/nlVMqk+Xd792Jrgmw1deP4bT4Jb1KJC3VuZdk8mZNE7vOtQYciP5rGp3xgJPT1ZFPfIvf3GkKwQlF80B7+UsfcbRjGvUoR17EozzF+lp88xTCsDOsa51yh1ItVD4sysnJu8deqSpuEg6R1RwB/cfs9b0f root@936b3b6c4fa0**
+	SHARE THIS KEY WITH YOUR ADMIN: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5oHWTv4s5vHWaqm5Xx8ovyG+bgOB0JCyrXnXErNq9wjnWhB3jGirSQTMGHj53p3hDWR+gV1Zgf8BJfwp4ODsuPpMnuMNyuUMWlItyKxQco8P8zi8sjJ3TfW2DNYf0QGEdkvFIMryejIoFoooDC3uUI0ofMRuyC2VPT+wOLmSOf2mgDL838XYis4Z2BC/nlVMqk+Xd792Jrgmw1deP4bT4Jb1KJC3VuZdk8mZNE7vOtQYciP5rGp3xgJPT1ZFPfIvf3GkKwQlF80B7+UsfcbRjGvUoR17EozzF+lp88xTCsDOsa51yh1ItVD4sysnJu8deqSpuEg6R1RwB/cfs9b0f root@936b3b6c4fa0
 	Removing intermediate container dc1e6101d410
 	 ---> cd074353ff52
 	Successfully built cd074353ff52
