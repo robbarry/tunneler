@@ -12,7 +12,7 @@ This file should be located at:
 
 ### 2. Add your username to your `bash` profile:
 
-	echo "<YOUR_USERNAME>" >> ~/.profile
+	echo "export DJ_USERNAME=YOUR_USERNAME" >> ~/.profile && source ~/.profile
 
 ### 3. Install Docker
 
