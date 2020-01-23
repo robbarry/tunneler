@@ -4,20 +4,30 @@ Use this tool to connect to MongoDB on Data1 (eventually, could be repurposed fo
 
 ## Installation instructions
 
-1. Install Docker:
+### 1. Send Rob a copy of your public key
+
+This file should be located at:
+
+	~/.ssh/id_rsa.pub
+
+### 2. Add your username to your `bash` profile:
+
+	echo "<YOUR_USERNAME>" >> ~/.profile
+
+### 3. Install Docker
 
 	sudo apt-get install docker
 
-2. Clone instance:
+### 4. Clone repository
 
 	git clone git@github.com:robbarry/ssher.git
 
-3. Build Container:
+### 5. Build container
 
 	cd ssher
 	./build
 
-4. Run container:
+### 6. Run container
 
 	./run
 
