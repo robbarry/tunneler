@@ -12,30 +12,32 @@ If necessary, add your user to the Docker group (you'll need to reconnect):
 
 	sudo usermod -aG docker [USERNAME]
 
-### 2. Clone repository
+### 2. Clone the repository
 
 	git clone git@github.com:robbarry/ssher.git
 
-### 3. Build container
+### 3. Build the container
 
 You'll need to specify the IP address of the machine you want to connect to.
 
 	cd ssher && ./build [SERVER_IP_ADDRESS]
 
-### 4. The build process will output an SSH key, which you'll need to share with the server administrator.
+### 4. The build process will output an SSH key, which you'll need to share with the server administrator
 
 For example, see the SSH key below:
 
-	Step 9/10 : CMD ["./entrypoint"]
-	 ---> Running in 20553fe83aa2
-	Removing intermediate container 20553fe83aa2
-	 ---> 1ebf678f52c6
-	Step 10/10 : RUN output="$( echo SHARE THIS KEY WITH YOUR ADMIN: &&                cat /root/.ssh/id_rsa.pub)" && echo $output
-	 ---> Running in dc1e6101d410
-	SHARE THIS KEY WITH YOUR ADMIN: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5oHWTv4s5vHWaqm5Xx8ovyG+bgOB0JCyrXnXErNq9wjnWhB3jGirSQTMGHj53p3hDWR+gV1Zgf8BJfwp4ODsuPpMnuMNyuUMWlItyKxQco8P8zi8sjJ3TfW2DNYf0QGEdkvFIMryejIoFoooDC3uUI0ofMRuyC2VPT+wOLmSOf2mgDL838XYis4Z2BC/nlVMqk+Xd792Jrgmw1deP4bT4Jb1KJC3VuZdk8mZNE7vOtQYciP5rGp3xgJPT1ZFPfIvf3GkKwQlF80B7+UsfcbRjGvUoR17EozzF+lp88xTCsDOsa51yh1ItVD4sysnJu8deqSpuEg6R1RwB/cfs9b0f root@936b3b6c4fa0
-	Removing intermediate container dc1e6101d410
-	 ---> cd074353ff52
-	Successfully built cd074353ff52
+<pre>
+Step 9/10 : CMD ["./entrypoint"]
+ ---> Running in 20553fe83aa2
+Removing intermediate container 20553fe83aa2
+ ---> 1ebf678f52c6
+Step 10/10 : RUN output="$( echo SHARE THIS KEY WITH YOUR ADMIN: &&                cat /root/.ssh/id_rsa.pub)" && echo $output
+ ---> Running in dc1e6101d410
+<b>SHARE THIS KEY WITH YOUR ADMIN: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5oHWTv4s5vHWaqm5Xx8ovyG+bgOB0JCyrXnXErNq9wjnWhB3jGirSQTMGHj53p3hDWR+gV1Zgf8BJfwp4ODsuPpMnuMNyuUMWlItyKxQco8P8zi8sjJ3TfW2DNYf0QGEdkvFIMryejIoFoooDC3uUI0ofMRuyC2VPT+wOLmSOf2mgDL838XYis4Z2BC/nlVMqk+Xd792Jrgmw1deP4bT4Jb1KJC3VuZdk8mZNE7vOtQYciP5rGp3xgJPT1ZFPfIvf3GkKwQlF80B7+UsfcbRjGvUoR17EozzF+lp88xTCsDOsa51yh1ItVD4sysnJu8deqSpuEg6R1RwB/cfs9b0f root@936b3b6c4fa0</b>
+Removing intermediate container dc1e6101d410
+ ---> cd074353ff52
+Successfully built cd074353ff52
+</pre>
 
 ### 5. Create the container
 
