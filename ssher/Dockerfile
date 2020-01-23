@@ -20,9 +20,7 @@ RUN mkdir -p /root/.ssh && \
     echo "$ssh_prv_key" > /root/.ssh/id_rsa && \
     echo "$ssh_pub_key" > /root/.ssh/id_rsa.pub && \
     chmod 600 /root/.ssh/id_rsa && \
-    chmod 600 /root/.ssh/id_rsa.pub && \
-    echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
-
+    chmod 600 /root/.ssh/id_rsa.pub
 
 ENV HOST_IP=$host_ip
 ENV LOCAL_PORT=$local_port
@@ -32,8 +30,7 @@ ENV HOST_USER=$host_user
 WORKDIR /usr/src/ssher
 COPY ./$docker_root_path/entrypoint .
 
-# EXPOSE $local_port
-# EXPOSE $remote_port
-# EXPOSE 80
+EXPOSE $local_port
+EXPOSE $remote_port
 
 CMD ["./entrypoint"]
