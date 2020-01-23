@@ -1,3 +1,5 @@
+#!/bin/bash
+
 docker build -t ssher --build-arg ssh_prv_key="$(cat ~/.ssh/id_rsa)" \
 				      --build-arg ssh_pub_key="$(cat ~/.ssh/id_rsa.pub)" \
 				      --build-arg host_ip="10.2.173.9" \
@@ -6,3 +8,9 @@ docker build -t ssher --build-arg ssh_prv_key="$(cat ~/.ssh/id_rsa)" \
 				      --build-arg docker_root_path="ssher" \
 				      --build-arg host_user="$DJ_USERNAME" \
 				      -f ssher/Dockerfile .
+
+docker container run --publish 27017:27017 --detach --name mongodb ssher
+# docker container run --publish 27017:27017 -it --name mongodb ssher
+
+echo "To start/stop connection, run:"
+echo "	docker container stop/start mongodb"

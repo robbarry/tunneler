@@ -1,6 +1,6 @@
 # ssher
 
-Use this tool to connect to MongoDB on Data1 (eventually, could be repurposed for all WSJ data team db connections).
+Use this tool to connect to MongoDB on DATA1 (eventually, could be repurposed for all WSJ data team db connections).
 
 ## Installation instructions
 
@@ -12,7 +12,7 @@ This file should be located at:
 
 ### 2. Add your username to your `bash` profile:
 
-	echo "export DJ_USERNAME=YOUR_USERNAME" >> ~/.profile && source ~/.profile
+	echo "export DJ_USERNAME=[YOUR_USERNAME]" >> ~/.profile && source ~/.profile
 
 ### 3. Install Docker
 
@@ -24,12 +24,11 @@ This file should be located at:
 
 ### 5. Build container
 
-	cd ssher
-	./build
+	cd ssher && ./build
 
-### 6. Run container
+### To stop/start the container, run:
 
-	./run
+	docker container [stop/start] mongodb
 
 ## Todo
 
