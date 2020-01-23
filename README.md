@@ -1,6 +1,6 @@
 # ssher
 
-Use this tool to connect to MongoDB on DATA1 (eventually, could be repurposed for all WSJ data team db connections).
+Use this tool for easy port forwarding.
 
 ## Installation instructions
 
