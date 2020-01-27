@@ -77,3 +77,5 @@ If you want to see all containers (including those which aren't running), type:
 You can also delete the container. If you do so while it's running, you'll need to specify the `--force` parameter:
 
 	docker rm [CONTAINER_NAME] --force
+
+You can also have the container [start automatically on boot](https://docs.docker.com/config/containers/start-containers-automatically/).
