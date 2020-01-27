@@ -4,22 +4,54 @@ Use this tool for easy port forwarding.
 
 ## Installation instructions
 
+These instructions are for use on Linux.
+
 ### 1. Clone the repo
 
 	git clone git@github.com:robbarry/tunneler.git
-
-### 2. Run setup
-
 	cd tunneler
+
+### 2. (optional) Add SSH keys
+
+If you've already got SSH keys you want to use, copy them to the `certs`. Call your private key `tunneler_rsa` and your public key `tunneler_rsa.pub`.
+
+If you don't add your own SSH keys, the setup script will create them for you.
+
+### 3. Run setup
+
+#### On Linux:
+
+One stop shop! Just run:
+
 	./setup
 
-### 3. Share the auto-generated SSH key with server admin
-	
-### 4. Create the container
+#### On a Mac:
+
+Install Docker and related components:
+
+	brew install docker docker-machine
+	brew cask install virtualbox
+	docker-machine create --driver virtualbox default
+	docker-machine env default
+	eval "$(docker-machine env default)"
+
+Build the container:
+
+	./build
+
+#### On a PC:	
+
+TBD.
+
+### 4. Share the auto-generated SSH key with server admin
+
+If you let the setup auto create your SSH keys, share the public key with your server admin so they can associate it with your username.
+
+### 5. Create the container
 
 	./create [CONTAINER_NAME] [YOUR_USERNAME] [HOST_IP] [LOCAL_PORT] [REMOTE_PORT]
 
-For example, if you wanted to connect to MongoDB on `192.168.0.5` port `27017` with the username `jsmith`, you could type:
+For example, if you wanted to connect to MongoDB on `192.168.0.5` port `27017` with the username `jsmith`, you would type:
 
 	./create mongodb jsmith 102.168.0.5 27017 27017
 
