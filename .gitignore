@@ -1,1 +1,2 @@
-certs/*
+tunneler_rsa
+tunneler_rsa.pub
