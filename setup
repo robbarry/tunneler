@@ -1,0 +1,24 @@
+#!/bin/bash
+
+if [ ! -f "certs/tunneler_rsa" ]; then
+    sudo apt-get install docker.io
+    sudo usermod -aG docker $USER
+    ssh-keygen -q -t rsa -N '' -f certs/tunneler_rsa     
+fi
+
+docker build -t tunneler --build-arg docker_root_path="tunneler" -f "tunneler/Dockerfile" .
+
+status=$?
+
+if [ $status -eq 0 ]; then
+    echo "Build completed successfully"
+else
+    echo "WARNING: Build failed"
+fi
+
+echo ""
+echo "Share this key with your admin:"
+echo "***"
+cat "certs/tunneler_rsa.pub"
+echo "***"
+

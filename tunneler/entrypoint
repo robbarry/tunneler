@@ -1,5 +1,6 @@
 #!/bin/bash
 
+ssh-keyscan $host_ip >> /root/.ssh/known_hosts
 autossh -M 0 -4 -T -N -g -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3" -L $local_port:localhost:$remote_port $username@$host_ip		
 
 

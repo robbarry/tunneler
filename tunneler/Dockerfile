@@ -9,17 +9,14 @@ RUN apk add --no-cache \
   bash \
   autossh
 
-RUN mkdir -p /root/.ssh && \
-    chmod 0700 /root/.ssh && \    
-    ssh-keygen -q -t rsa -N '' -f root/.ssh/id_rsa && \
-    ssh-keyscan $host_ip >> /root/.ssh/known_hosts
+COPY certs/tunneler_rsa /root/.ssh/id_rsa
+COPY certs/tunneler_rsa.pub /root/.ssh/id_rsa.pub
 
-WORKDIR /usr/src/ssher
+RUN chmod 0700 /root/.ssh    
+
+WORKDIR /usr/src/tunneler
 COPY ./$docker_root_path/entrypoint .
 
 ENV host_ip=$host_ip
 
 CMD ["./entrypoint"]
-
-RUN output="$( echo SHARE THIS KEY WITH YOUR ADMIN: && \
-               cat /root/.ssh/id_rsa.pub)" && echo $output
