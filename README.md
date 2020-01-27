@@ -4,52 +4,26 @@ Use this tool for easy port forwarding.
 
 ## Installation instructions
 
-### 1. Install Docker
+### 1. Clone the repo
 
-	sudo apt-get install docker.io
+	git clone git@github.com:robbarry/tunneler.git
 
-If necessary, add your user to the Docker group (you'll need to reconnect):
+### 2. Run setup
 
-	sudo usermod -aG docker [USERNAME]
+	cd tunneler
+	./setup
 
-### 2. Clone the repository
+### 3. Share the auto-generated SSH key with server admin
+	
+### 4. Create the container
 
-	git clone git@github.dowjones.net:investigations/ssher.git
+	./create [CONTAINER_NAME] [YOUR_USERNAME] [HOST_IP] [LOCAL_PORT] [REMOTE_PORT]
 
-### 3. Build the container
+For example, if you wanted to connect to MongoDB on `192.168.0.5` port `27017` with the username `jsmith`, you could type:
 
-You'll need to specify the IP address of the machine you want to connect to.
+	./create mongodb jsmith 102.168.0.5 27017 27017
 
-	cd ssher && ./build [SERVER_IP_ADDRESS]
-
-### 4. The build process will output an SSH key, which you'll need to share with the server administrator
-
-Here's some sample output:
-
-<pre>
-Step 9/10 : CMD ["./entrypoint"]
- ---> Running in 20553fe83aa2
-Removing intermediate container 20553fe83aa2
- ---> 1ebf678f52c6
-Step 10/10 : RUN output="$( echo SHARE THIS KEY WITH YOUR ADMIN: &&                cat /root/.ssh/id_rsa.pub)" && echo $output
- ---> Running in dc1e6101d410
-<b>SHARE THIS KEY WITH YOUR ADMIN: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5oHWTv4s5vHWaqm5Xx8ovyG+bgOB0JCyrXnXErNq9wjnWhB3jGirSQTMGHj53p3hDWR+gV1Zgf8BJfwp4ODsuPpMnuMNyuUMWlItyKxQco8P8zi8sjJ3TfW2DNYf0QGEdkvFIMryejIoFoooDC3uUI0ofMRuyC2VPT+wOLmSOf2mgDL838XYis4Z2BC/nlVMqk+Xd792Jrgmw1deP4bT4Jb1KJC3VuZdk8mZNE7vOtQYciP5rGp3xgJPT1ZFPfIvf3GkKwQlF80B7+UsfcbRjGvUoR17EozzF+lp88xTCsDOsa51yh1ItVD4sysnJu8deqSpuEg6R1RwB/cfs9b0f root@936b3b6c4fa0</b>
-Removing intermediate container dc1e6101d410
- ---> cd074353ff52
-Successfully built cd074353ff52
-</pre>
-
-In this case, you'd need to share the SSH key in bold with your administrator.
-
-### 5. Create the container
-
-	./create [CONTAINER_NAME] [YOUR_USERNAME] [LOCAL_PORT] [REMOTE_PORT]
-
-For example, if you wanted to connect to MongoDB on port `27017` with the username `jsmith`, you could type:
-
-	./create mongodb jsmith 27017 27017
-
-At which point `localhost:27017` would be bound to the remote machine's port `27017`.
+At which point `localhost:27017` would be bound to `192.168.0.5`'s port `27017`.
 
 ## Starting and stopping the connection
 
