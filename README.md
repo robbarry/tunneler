@@ -1,4 +1,4 @@
-# ssher
+# tunneler
 
 Use this tool for easy port forwarding.
 
