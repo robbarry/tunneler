@@ -15,7 +15,7 @@ These instructions are for use on Linux.
 
 If you've already got SSH keys you want to use, copy them to the `certs`. Call your private key `tunneler_rsa` and your public key `tunneler_rsa.pub`.
 
-If you don't add your own SSH keys, the setup script will create them for you.
+If you don't add your own SSH key, it'll be created in the next step.
 
 ### 3. Run setup
 
@@ -34,6 +34,10 @@ Install Docker and related components:
 	docker-machine create --driver virtualbox default
 	docker-machine env default
 	eval "$(docker-machine env default)"
+
+Create an SSH key (if you didn't already add it):
+
+	ssh-keygen -q -t rsa -N '' -f certs/tunneler_rsa
 
 Build the container:
 

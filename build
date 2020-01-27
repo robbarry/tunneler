@@ -9,9 +9,3 @@ if [ $status -eq 0 ]; then
 else
     echo "WARNING: Build failed"
 fi
-
-echo ""
-echo "Share this key with your admin:"
-echo "***"
-cat "certs/tunneler_rsa.pub"
-echo "***"

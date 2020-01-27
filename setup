@@ -7,3 +7,9 @@ if [ ! -f "certs/tunneler_rsa" ]; then
 fi
 
 ./build
+
+echo ""
+echo "Share this key with your admin:"
+echo ""
+cat "certs/tunneler_rsa.pub"
+echo ""
