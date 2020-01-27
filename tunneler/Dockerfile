@@ -12,7 +12,8 @@ RUN apk add --no-cache \
 COPY certs/tunneler_rsa /root/.ssh/id_rsa
 COPY certs/tunneler_rsa.pub /root/.ssh/id_rsa.pub
 
-RUN chmod 0700 /root/.ssh    
+RUN chmod 0600 /root/.ssh/id_rsa && \
+	chmod 0600 /root/.ssh/id_rsa.pub
 
 WORKDIR /usr/src/tunneler
 COPY ./$docker_root_path/entrypoint .
